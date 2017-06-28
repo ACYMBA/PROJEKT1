@@ -1,0 +1,246 @@
+$tablet: 768px
+$desktop: 767px
+$colorA: #fff
+$box-model: border-box
+$text-h1: center
+
+@mixin box-sizing($box-model) 
+	-webkit-box-sizing: $box-model 
+	-moz-box-sizing: $box-model 
+	box-sizing: $box-model
+
+.container
+	max-width: 1200px
+	margin: 0 auto
+	width: 100%
+body 
+	font-family: 'Open Sans', sans-serif
+	margin: 0
+	
+  	
+header 
+	background-color: #313234
+	nav 
+		ul 
+			padding: 0
+			list-style-type: none
+			float: right
+			margin: 0
+		img 
+			padding: 10px 0
+		li 
+			display: inline-block
+		a 
+			color: $colorA
+			line-height: 50px
+			padding: 0 20px
+			text-decoration: none
+			text-transform: uppercase
+		
+		img 
+			display: inline-block
+			float: none
+			text-align: center
+			width: 100%
+
+nav li:hover 
+	background-color: #7E9FED
+
+.hero 
+	margin-bottom: 50px
+	width: 100%
+	height: calc(100vh - 50px)
+	padding-top: 42vh
+	text-align: center
+	background-image: url(https://static.pexels.com/photos/326516/pexels-photo-326516.jpeg)
+	background-size: cover
+	background-position: center
+	overflow: hidden
+
+.slogan 
+	margin-top: 20px
+	padding: 15px 40px
+	background: rgba(112,112,112,0.5)
+	font-size: 20px
+	color: white
+	float: right
+	border: none
+	width: 800px
+
+.row:before, 
+.row:after 
+	content: ""
+	display: table 
+	clear: both
+
+.introduction 
+	text-align: center
+	.fa 
+		background-color: #313332
+		width: 80px
+		height: 80px
+		line-height: 80px
+		border-radius: 10%
+		font-size: 50px
+		color: white
+		text-align: center
+		&:hover  
+			background-color: blue
+			
+p, 
+h1 
+	text-align: $text-h1
+	
+section > .container 
+	margin: 50px auto
+	
+.gallery [class*="col-"] 
+	padding: 0
+	position: relative
+
+.gallery 
+	line-height: 0
+	.layer 
+		position: absolute
+		width: 100%
+		height: 100%
+		top: 0
+		left: 0
+		transition: .4s
+		text-align: center
+		
+	.fa 
+		position: relative
+		top: 50%
+		transform: translateY(-50%)
+		margin: 0 15px
+		color: $colorA
+		opacity: 0
+		transition: .4s
+	
+	img 
+		width: 100%
+
+.gallery [class*="col-"]:hover .layer 
+	background: rgba(0, 0, 0, .5)
+
+.gallery [class*="col-"]:hover .layer .fa 
+	opacity: 1
+
+.team 
+	img 
+		margin: 0 auto
+		margin-top: 100px
+		background-color: #313332
+		width: 200px
+		height: 200px
+		border-radius: 50%
+
+	h1 
+		margin-top: 0px
+		text-align: $text-h1
+
+.imap 
+	img 
+		top: 30px
+		left: 30px
+		height: 350px
+		border-radius: 0%
+	
+	h1 
+		margin-top: 0
+		text-align: left
+		color: blue
+
+	p 
+		margin-top: 100px
+		text-align: left
+		color: blue
+
+.numbers 
+	margin: 50px auto
+	h1  
+		margin-bottom: 10px
+		color: black
+		text-align: $text-h1
+		font-size: 80px
+
+	p 
+		margin-top: 0px
+		text-align: $text-h1
+		font-size: 20px 
+		font-weight: bold
+		color: blue
+
+.foot 
+	background-color: #313234
+	h1 
+		text-align: left
+		font-size: 20px 
+		font-weight: bold
+		color: white
+		text-align: left
+	.fa 
+		display: inline-block
+		background-color: white
+		font-size: 20px
+		color: black
+		
+	i
+		background-color: #5CBCCD
+		width: 30px
+		height: 30px
+		border-radius: 0%
+		margin: 3px
+		float: left
+	p 
+		font-size: 20px
+		color: white
+		margin: 0 auto
+		top: 0px
+		text-align: left
+
+	.contact-data 
+		.row 
+			margin-bottom: 30px
+			
+@media (max-width: $tablet)
+	.header  
+		nav 
+			ul 
+				display: block
+				float: none
+				text-align: center
+		li
+			display: block
+			float: none
+			text-align: center
+			width: 100%
+		img 
+			display: block
+			float: none
+			text-align: center
+			width: 100%
+ 
+	.hero .slogan 
+		width: 100%
+  
+	.gallery .fa 
+		opacity: 1
+		font-size: 30px
+	  
+	.foot .row 
+		font-size: 10px
+  
+	.team img 
+		margin: 0 auto
+	
+		
+@media (min-width: $desktop)
+	.header 
+		img 
+			padding: 10px 0
+			width: 20%
+
+
+ 	
